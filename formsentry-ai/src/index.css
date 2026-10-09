@@ -1,0 +1,81 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Source Sans 3", "Segoe UI", system-ui, -apple-system, Roboto, Arial, sans-serif;
+  --color-navy: #17365d;
+  --color-brand: #145da0;
+  --color-brand-dark: #0f4a80;
+  --color-surface: #f4f6f8;
+  --color-ink: #1b2430;
+  --color-muted: #4a5766;
+  --color-line: #cfd6df;
+  --color-amber-bg: #fff4db;
+  --color-amber-ink: #6f4300;
+  --color-amber-line: #e0b043;
+  --color-ok-bg: #e5f3ea;
+  --color-ok-ink: #17602f;
+  --color-ok-line: #8cc7a1;
+  --color-bad-bg: #fbe9e9;
+  --color-bad-ink: #8f2020;
+  --color-bad-line: #e0a3a3;
+  --color-info-bg: #e8f1fa;
+  --color-info-ink: #0f4a80;
+  --color-info-line: #9fc2e3;
+}
+
+html {
+  font-size: 16px;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--color-surface);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  line-height: 1.5;
+  overflow-x: hidden;
+}
+
+/* Two-tone focus ring: visible on white, grey and navy backgrounds. */
+:focus-visible {
+  outline: 3px solid #ffbf47;
+  outline-offset: 2px;
+  box-shadow: 0 0 0 2px #17365d;
+}
+
+h1, h2, h3 { color: var(--color-navy); line-height: 1.25; }
+
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  background: #fff;
+  color: var(--color-navy);
+  padding: 0.75rem 1rem;
+  z-index: 100;
+  font-weight: 600;
+}
+.skip-link:focus { left: 0.5rem; top: 0.5rem; }
+
+@media (prefers-reduced-motion: reduce) {
+  * { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+}
+
+@keyframes fs-spin { to { transform: rotate(360deg); } }
+.fs-spin { animation: fs-spin 0.9s linear infinite; }
+
+.hatched {
+  background-image: repeating-linear-gradient(45deg, #e6eaef 0 6px, #f4f6f8 6px 12px);
+}
+
+@media print {
+  @page { margin: 14mm; }
+  body { background: #fff; }
+  .no-print { display: none !important; }
+  .print-only { display: block !important; }
+  a { color: inherit; text-decoration: none; }
+  details > summary { list-style: none; }
+  .avoid-break { break-inside: avoid; }
+}
+.print-only { display: none; }

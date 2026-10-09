@@ -1,0 +1,32 @@
+{
+  "name": "formsentry-ai",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "FormSentry AI - Check Before You Submit. Team VeriForge prototype for the Seva First Innovation Challenge 2026, Maharashtra.",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "preview": "vite preview",
+    "typecheck": "tsc -b",
+    "test": "tsx src/tests/run.ts"
+  },
+  "dependencies": {
+    "lucide-react": "^0.468.0",
+    "mammoth": "^1.8.0",
+    "pdfjs-dist": "^4.10.38",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "tesseract.js": "^5.1.1"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.0.0",
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "@vitejs/plugin-react": "^4.3.4",
+    "tailwindcss": "^4.0.0",
+    "tsx": "^4.19.0",
+    "typescript": "~5.6.3",
+    "vite": "^6.0.0"
+  }
+}
